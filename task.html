@@ -1,0 +1,40 @@
+<!--Password Validation-->
+<html>
+<head>
+<title>
+Password Validation
+</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+</head>
+<body>
+<form>
+Password<br>
+<input type="password" name="password" id="pass" onclick="stp()" oninput="check()"><span id="msg"></span><i class=""></i><i id="loader" class="fas fa-spinner fa-spin" style="opacity:0;"></i><i id="check" class="fas fa-check" style="opacity:0;"></i>
+</form>
+<script>
+function stp()
+{
+	var x = document.getElementById("msg");
+	x.innerHTML = "Enter 10 Digit Password ! ";
+}
+
+function check()
+{
+	var x = document.getElementById("msg");
+	x.style.display = "none";
+	
+	var y = document.getElementById("loader");
+	y.style.opacity = 1;
+	
+	var z = document.getElementById("pass").value;
+	var len = z.length;
+	
+	var chk = document.getElementById("check");
+	len>10 ? chk.style.opacity = 1 : y.style.opacity = 1;
+	len>10 ? y.style.opacity = 0 : chk.style.opacity = 0;
+	
+}
+</script>
+</body>
+</html>
+
